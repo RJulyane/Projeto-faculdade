@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    srand(time(0));
+    int i, j;
+    int l, c;
+    char vogais[5]={'A','E','I','O','U'};
+    int v;
+    printf("quantas linhas? ");
+    scanf("%i", &l);
+	printf("quantas colunas? ");
+    scanf("%i", &c);
+    char matriz[l][c];
+    
+    for (i=0;i<l;i++){
+		for (j=0;j<c;j++){
+			v= rand()%5;
+			matriz[i][j]=vogais[v];
+		}
+	}
+	for (i=0;i<l;i++){
+		for (j=0;j<c;j++){
+			printf("%c ", matriz[i][j]);
+		}
+		printf("\n");
+	}
+    
+    return 0;
+}
